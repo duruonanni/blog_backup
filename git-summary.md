@@ -1,5 +1,5 @@
 ---
-title: GitHub入门与实践读书笔记
+title: 《GitHub入门与实践》读书笔记
 date: 2018-01-21 18:34:55
 update:
 tags:
@@ -8,7 +8,7 @@ categories:
 
 ## 写在之前的话
 - 本文是杜若学习GitHub的笔记整理,主要参考了以下书籍,博客:
-    1. [<GitHub入门与实践>][1]
+    1. [《GitHub入门与实践》][1]
     2. [廖雪峰先生的git教程][10]
     3. [Por Git][50] (推荐,官方教程)
 - 由于我的开发环境是`Windows`,所以主要记录这上面的使用方法
@@ -16,9 +16,10 @@ categories:
 - 在笔记的末尾,总结了笔记示例中用到的[常用Git命令](#git_command),供以查询
     - 笔记只涉及Git和Github的概念性介绍,和简单的Git命令
     - 更多厉害的功能,我也还不会,待以后扩充吧 
+
 呐~正文开始啦~🐱‍👤
 
-<div align="center">![github_portal][2]</div>
+<div align="left">![github_portal][2]</div>
 
 ---
 
@@ -69,7 +70,7 @@ categories:
         - 可以使用私有仓库,要给GitHub钱
         - 私有仓库也可以自己租服务器,架Git仓库
 - GitHub的标志很萌,叫`octocat`--> `octopus`+`cat`
-<div align="center">![octocat][3]</div>
+<div align="left">![octocat][3]</div>
 
 - GitHub上绝大多数都是公开的代码,这影响了人们的开发方式
     - GitHub提出了`Social Coding`,社会化编程的概念
@@ -94,7 +95,7 @@ categories:
 - 安装好后,会出现一个`Git Bash`应用
     - 这是一个命令提示符界面,类似CMD
     - 所有的Git命令都在这个应用中使用 
-    <div align="center">![Git_Bash][4]</div>
+    <div align="left">![Git_Bash][4]</div>
 
 ### Git初始设置
 - 设置Git用户名和邮箱
@@ -126,7 +127,7 @@ categories:
 
 #### 向GitHub添加公钥用于连接
 - 登陆GitHub,找到`setting`-->`SSH Keys and GPG Keys`
-    <div align="center">![git_SSH_Key13]</div>
+    <div align="left">![git_SSH_Key13][13]</div>
 - 选`Add SSH Key`
     - title填你喜欢的
     - Key填刚才生成的公有密钥`id_rsa.pub`中的值
@@ -174,12 +175,12 @@ categories:
     1. 向之前的`hello_world.php`添加一句注释,`<!-- 添加注释 -->`
         - 此时这个文件中的数据就已经改变了
         - 可以通过`git status`命令查看文件状态,会显示`modified` 
-    <div aling="center">![git_diff][5]</div>
+    <div align="left">![git_diff][5]</div>
     2. 执行`git diff 文件名`命令
         - diff就是different的简写,注意后面要加文件名
         - 执行后会显示该文件的未提交的具体变化 
         - 添加的注释是绿色的,前面有个`+`
-    <div aling="center">![git_status][6]</div>
+    <div align="left">![git_status][6]</div>
     3. 执行`git add 文件名`命令
         - 将修改后的结果提交到仓库中
         - 注意每次修改了,必须要执行`add`,再`commit`才能纳入仓库
@@ -189,7 +190,7 @@ categories:
     5. 执行`git status`查看当前文件状态
         - 会看到之前没有需要提交的修改了
         - `working three is clean`
-    <div aling="center">![github7][7]</div>
+    <div align="left">![github7][7]</div>
     6. 建议多次尝试修改,进行练习 
 
 ### 版本控制基本用法2 : 退回之前版本
@@ -198,11 +199,11 @@ categories:
         - 查看仓库日志,就是`commit`的执行和说明
             - 日志中`commit`后面的一串字符是系统生成的id
             - 用来标识那次改动的版本
-        <div aling="center">![git_log9][9]</div>
+        <div align="left">![git_log9][9]</div>
         - 多次提交`commit`Git会把执行存成一条时间线
         - 通过`Git Gui`可以查看提交历史的时间线
             - 不建议使用这个软件,因为我们主要会在`github`上看啦
-        <div aling="center">![github_GitGui8][8]</div>
+        <div align="left">![github_GitGui8][8]</div>
         - 在`Git Bash`中查看完日志后的退出
             - 方式1: 输入`q`再回车
             - 方式2: 输入`ctrl c`
@@ -267,7 +268,7 @@ categories:
     3. 执行`git reset HEAD hello_world.php`
         - 看这里`reset`命令也可以撤销暂存区中的修改哈
         - 现在看`status`,修改显示为未纳入暂存区的红色状态,那就用情形1的方法搞定吧
-    <div aling="center">![git_reset2][11]</div>
+    <div align="left">![git_reset2][11]</div>
     4.  执行`git checkout -- hello_world.php`
 
 ### 版本控制基本用法3: 删除文件
@@ -279,7 +280,7 @@ categories:
     4. 在本地删除该文件,执行`git status`
         - 信息说名该文件被删除了
         - 但本地删除了,版本库里还有,需要删除版本库中的执行`5.`操作
-     <div aling="center">![git_delete12]</div>
+     <div align="left">![git_delete12][12]</div>
      5. 执行`git rm hello_git.txt`
         - 删除版本库中的该文件,`rm --> remove`
         - 此时查看`status`,可见该删除待`commit`
@@ -300,23 +301,23 @@ categories:
         - 仓库名随便起,为了统一,都叫`nostalgic`吧
             - 听[这首歌](http://music.163.com/m/song?id=801824&userid=9567158)时候取的名字...
         - 选`Create repository`确认创建
-    <div aling="center">![git_new_repo14][14]</div>
+    <div align="left">![git_new_repo14][14]</div>
     2. 将本地仓库与GitHub上新建的仓库连接
         - 进入本地仓库,在`Git Bash`中输入:
         - `git remote add origin git@github.com:你的帐户名/你的仓库名.git`
         - 这个操作,看GitHub上都有提醒的,复制代码来运行即可
         - 操作中的`origin`,是远程库的名字,默认使用这个名字,这样看到就知道是远程库了
-    <div aling="center">![git_new_repo15][15]</div>
+    <div align="left">![git_new_repo15][15]</div>
     3. 将本地库内容推送到GitHub远程库上
         - 执行:`git push -u origin master`
             - `-u` : 将本地master分支和远程master分支关联的参数
                 - 关联一次后,后面推送就不需要这个参数了
             - `origin` : 说明推送到的远程仓库的名字
             - `master` : 主分支,关于分支,[后面][#branch]会详细讲
-    <div aling="center">![git_push16][16]</div>
+    <div align="left">![git_push16][16]</div>
     4. 打开GitHub上的`noastalgic`项目,本地仓库的内容就已经推送到了
         - 随时将本地项目`push`到GitHub上,就能防止代码丢失等情况
-    <div aling="center">![github_push17][17]</div>
+    <div align="left">![github_push17][17]</div>
 - 附 : GitHub创建仓库的名词解释
     - 创建`Private`是要收费的,免费的都是公开的
     - `Description` 是用于描述项目的,相当于简介,项目生成后在项目名下的小字
@@ -332,8 +333,8 @@ categories:
         - 文件夹不要和原有仓库文件夹一样,会出错
         - 执行:`git clone git@github.com:duruonanni/ClonePractice.git`
             - 换成自己的仓库地址
-    <div aling="center">![git_clone18][18]</div>
-    <div aling="center">![git_clone19][19]</div>
+    <div align="left">![git_clone18][18]</div>
+    <div align="left">![git_clone19][19]</div>
     3. 完成后,打开该文件夹,会看到一个`README.md`的文件,说明该仓库成功从Github上克隆到本地了 
 
 ---
@@ -369,7 +370,7 @@ categories:
     2. 查看当前项目的本地分支:
         - 执行: `git branch`
             - `*`表示当前所在分支
-    <div aling="center">![git_branch20][20]</div>
+    <div align="left">![git_branch20][20]</div>
         - 执行: `git status`
             - 查看项目状态,注意目前所在分支
     3. 对该项目中的文件`README.MD`进行修改并提交
@@ -386,7 +387,7 @@ categories:
             - 执行后显示的`Fast-forward`意思是
                 - 这次合并是"快进模式",也就是直接把master指向dev的当前提交,所以合并速度非常快
                 - 后面还会讲到其他合并模式
-    <div aling="center">![git_merge21][21]</div>
+    <div align="left">![git_merge21][21]</div>
     6. 删除`dev`分支
         - 执行: `git branch -d dev`
         - git建议使用完成某个分支后,就删除掉 
@@ -413,7 +414,7 @@ categories:
         - 执行: `git checkout master`
             - 显示: `Your branch is ahead of 'origin/master' by 1 commit.`
                 - 说明本地的`master`分支比远程的`origin/maste`超前一个版本(`commit`)
-    <div aling="center">![git_master22][22]</div>
+    <div align="left">![git_master22][22]</div>
     5. 修改`README.MD`文件
         - 最后一句改成: `This is master did"`
     6. 提交
@@ -423,7 +424,7 @@ categories:
         - 执行: `git merge feature1`
         - 显示合并失败,文件冲突`CONFILCT`
         - 也开始在尝试合并后,使用`status`查看状态,系统有给出解决冲突的建议
-    <div aling="center">![git_master23][23]</div>
+    <div align="left">![git_master23][23]</div>
     8. 解决文件冲突
         - 打开文件看看,文件现在变成这样了
             - `cat` 是linux命令,查看文件内容
@@ -433,8 +434,8 @@ categories:
             - 我们只留下master的修改
             - 当然在更智能的编辑器上,可以更方便的修改冲突
             - VSCODE上集成了Git,它的冲突修改界面入下图2
-    <div aling="center">![git_merge_config24][24]</div>
-    <div aling="center">![git_merge_config_vscode25][25]</div>
+    <div align="left">![git_merge_config24][24]</div>
+    <div align="left">![git_merge_config_vscode25][25]</div>
     9. 提交解决冲突后的版本
         - 执行: `git add README.MD`
         - 执行: `git commit -m "confict fixed"`
@@ -443,7 +444,7 @@ categories:
     11. 用log查看分支情况
         - 执行: `git log --graph`
         - 可以看到分支启用和合并的情况
-    <div aling="center">![git_log_graph26][26]</div>
+    <div align="left">![git_log_graph26][26]</div>
 
 ### 分支管理的使用3: 分支管理策略
 - 操作概述: 
@@ -464,13 +465,13 @@ categories:
         - `git checkout master`
     5. 合并`dev`分支,注意`-no-ff` 参数
         - `git merge --no-ff -m "merge dev with no-ff" dev`
-    <div aling="center">![git_merge_no-ff27][27]</div>
+    <div align="left">![git_merge_no-ff27][27]</div>
     6. 使用`log`查看分支历史
         - `git log --graph --pretty=oneline --abbrev-commit"`
             - `--pretty=oneline` : 让log的显示格式为简略1行
             - `--abbrev-commit` : id值只显示前面几个字符
-            - `log`的更多查看方式,见<span id="log">下面</span>
-     <div aling="center">![git_log_no-ff28][28]</div>
+            - `log`的更多查看方式,见[下面](#log)
+     <div align="left">![git_log_no-ff28][28]</div>
 - 总结: 
     - 采用`no-ff`形式,分支执行的操作历史也得以保存,不会被合并
     - 这样的做法,适合团队协作开发项目时使用
@@ -489,7 +490,7 @@ categories:
         - `git add working.txt`
     2. 这时候master分支有bug需要立即处理,使用`stash`将当前工作"储藏"起来
         - `git stash`
-    <div aling="center">![git_stash29][29]</div>
+    <div align="left">![git_stash29][29]</div>
     3. 切换到master分支,修复bug
         - `git checkout master`
         - 从master分支,创建修复bug的临时分支`issue-01`
@@ -514,7 +515,7 @@ categories:
             2. `git stash pop`
                 - 恢复stash中的内容,并删除
         - 可使用`git stash list`命令查看保存的stash
-     <div aling="center">![git_stash_pop30][30]</div>
+     <div align="left">![git_stash_pop30][30]</div>
       
 ---
 
@@ -553,12 +554,12 @@ categories:
 - 具体做法:
     1. 把一个标签推送到远程
         - `git push origin v1.0`
-    <span align="center">![git_tag_remote_add][31]</span>
+    <span align="left">![git_tag_remote_add][31]</span>
     2. 把本地所有标签推送到远程
         - `git push origin --tags`
     3. 删除远程的标签
         - `git push origin :refs/tags/v1.0`
-    <span align="center">![git_tag_remote_delete][32]</span>
+    <span align="left">![git_tag_remote_delete][32]</span>
     
 ---
 
@@ -592,12 +593,12 @@ categories:
 - 可以把log配置成自己想要显示的格式,然后用一个别名进行保存
 - `git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"`
 - 配置完成后,输入`git lg`,显示效果如下: 
-<span align="center">![git_lg][33]</span>
+<span align="left">![git_lg][33]</span>
 
 
 ---
 
-## <span id="git_command">常用git命令总结</span>
+## <span id="git_command">[常用git命令总结</span>
 
 ### 创建版本库
 - `git init [project-name]`
@@ -647,7 +648,7 @@ categories:
 ### 查看提交历史
 - `git log`
     - 显示`Git Bash`操作日志详情,包括每次提交的id号
-    - 有多种形式的显示方式,详情见<span id="log">下面</span>
+    - 有多种形式的显示方式,详情见[下面](#log)
 - `git log --graph`
     - 查看分支情况
 - `git reflog`
@@ -656,7 +657,7 @@ categories:
     - 查看某次commit的超详情,包括:
         - 操作人,时间,提交信息,操作文件的详情(包括文件内容) 
 
-#### [log输出的常用选项](#log)
+#### <span id="log">log输出的常用选项</span>
 说明: 这些输出命名效果可以叠加的,可以在一句log命令中使用多个,生成符合自己要求的日志信息: 
 1. 末尾加文件名
     - 只显示某个文件名相关的日志信息
@@ -758,12 +759,13 @@ categories:
 
 
 至此,完...... 
-<span align="center">![Album_Cover_清风二式_西皮士][34]</span>
+
+<div align="center">![Album_Cover_清风二式_西皮士][34]</div>
 
 
 
 <!-- 参考文献 -->
-[1]:  http://www.ituring.com.cn/book/1581 "图灵出版社 <GitHub入门与实践>"
+[1]: http://www.ituring.com.cn/book/1581
 [2]: http://storage.live.com/items/AEE68C12565C1619!199203:/github_portal.png?authkey=AJoh90nl3u6Wj4U
 [3]: http://storage.live.com/items/AEE68C12565C1619!199201:/octocat.png?authkey=AJoh90nl3u6Wj4U
 [4]: http://storage.live.com/items/AEE68C12565C1619!199205:/Git_Bash.png?authkey=AJoh90nl3u6Wj4U
