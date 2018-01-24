@@ -3,7 +3,11 @@ title: 《GitHub入门与实践》读书笔记
 date: 2018-01-21 18:34:55
 update:
 tags:
+    - 笔记
+    - 基础知识
+    - GitHub
 categories:
+    - 笔记
 ---
 
 ## 写在之前的话
